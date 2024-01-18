@@ -1,0 +1,345 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-12-16T14:06:51.815Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "каждые 10 минуты",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Interval Period\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-12-16T14:07:00.296Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "каждые минут",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Number of Periods\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-12-16T14:07:02.628Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "12: Проверить холодильник: каждые минут",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-12-16T14:09:04.227Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "12: Проверить холодильник: каждые минут",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Start Datetime\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-12-16T14:09:20.154Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "каждые 10 секунды",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Number of Periods\", \"Interval Period\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-12-16T14:09:25.530Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "12: Проверить холодильник: каждые 10 секунды",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-12-16T14:39:07.312Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "17",
+      "object_repr": "Жене: каждые 10 секунды",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-12-16T14:40:01.136Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "17",
+      "object_repr": "Жене: каждые 10 секунды",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Moderator",
+      "permissions": []
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jsrqcthqqqdz03vwv56qeadkry81cmvj",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hBoKQwu3XsGwgyMVA0kpV0Z765NutDtf-_9lwhxW0vYel7CnMRZaHH63TDSI9cdpHustyap1XWZUe6KPGiX15by83K4fwcl9vKtfWatCSyQB28SapyyduQGYygbD5YdW2cmiMxII3tSA3prUcHolGXx_gDlGzfQ:1rEQJQ:nbAnX39EYHrvuFGyqC_s9Wm6eGfGA_NQJCl1d3Dp35s",
+      "expire_date": "2023-12-30T08:46:20.507Z"
+    }
+  },
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 1,
+    "fields": {
+      "every": 10,
+      "period": "seconds"
+    }
+  },
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 2,
+    "fields": {
+      "every": 1,
+      "period": "minutes"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 1,
+    "fields": {
+      "minute": "0",
+      "hour": "4",
+      "day_of_week": "*",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "timezone": "Asia/Vladivostok"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictasks",
+    "pk": 1,
+    "fields": {
+      "last_update": "2023-12-17T03:37:35.978Z"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 29,
+    "fields": {
+      "name": "31: проверять холодильник",
+      "task": "app_habits.tasks.send_message_tg",
+      "interval": 2,
+      "crontab": null,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{\"telegram_id\": \"361991641\", \"start_time\": \"00:25\", \"task\": \"проверять холодильник\", \"location\": \"на кухне\", \"time_to_complete\": 10, \"reward\": null, \"related_habit\": {\"task\": \"выпью кружку кофе\", \"location\": \"где придется\", \"time_to_complete\": 120}}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": "2023-12-16T14:20:00Z",
+      "enabled": true,
+      "last_run_at": "2023-12-17T09:12:40.654Z",
+      "total_run_count": 336,
+      "date_changed": "2023-12-17T09:13:10.712Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "app_users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Tms62fFqgV33G7ITTjirlg$bPL30OWXzgBoVME565J/WzYtH12mQD5wHi/fcBf/cwI=",
+      "last_login": "2023-12-16T08:46:20.505Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-05T07:39:52.531Z",
+      "email": "admin@sky.pro",
+      "phone_number": null,
+      "avatar": "",
+      "telegram_id": "000000000",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$0VqRONRr2kS4x9XidYUipt$l2EIKGbi44R5GGtx2Zk3pbEZ1u88K13u7rSoThqAfIg=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Иван",
+      "last_name": "Иванов",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-05T07:40:00.381Z",
+      "email": "ivanov@sky.pro",
+      "phone_number": null,
+      "avatar": "",
+      "telegram_id": "000000000",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$0J6FqKr8TIu2xBIrgfVaju$vYtKVEVenCqqv+fnd9Z585tP4yPdpXAGWypxE76kSGg=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Петр",
+      "last_name": "Петров",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-05T07:40:00.645Z",
+      "email": "petrov@sky.pro",
+      "phone_number": null,
+      "avatar": "",
+      "telegram_id": "000000000",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$ZVoRqLZRY9NdlSLCLh3cTp$EPjmevput2Pf99ls1a0yYqSd4SN6T8Y7ln/tRQ1F5Dk=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Сидор",
+      "last_name": "Сидоров",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-05T07:40:00.902Z",
+      "email": "sidorov@sky.pro",
+      "phone_number": null,
+      "avatar": "",
+      "telegram_id": "000000000",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_habits.habit",
+    "pk": 1,
+    "fields": {
+      "owner": 3,
+      "task": "Выпить кружку кофе",
+      "start_time": "00:00:00",
+      "location": "Где придется",
+      "is_nice": true,
+      "related_habit": null,
+      "periodicity": "1",
+      "reward": null,
+      "time_to_complete": 60,
+      "is_public": true
+    }
+  },
+  {
+    "model": "app_habits.habit",
+    "pk": 2,
+    "fields": {
+      "owner": 3,
+      "task": "Прочитать новые английские слова",
+      "start_time": "21:00:00",
+      "location": "Где придется",
+      "is_nice": false,
+      "related_habit": 1,
+      "periodicity": "1",
+      "reward": null,
+      "time_to_complete": 60,
+      "is_public": false
+    }
+  },
+  {
+    "model": "app_habits.habit",
+    "pk": 3,
+    "fields": {
+      "owner": 3,
+      "task": "Отжаться 20 раз",
+      "start_time": "07:10:00",
+      "location": "Гостинная",
+      "is_nice": false,
+      "related_habit": null,
+      "periodicity": "1",
+      "reward": "Скушать кекс",
+      "time_to_complete": 60,
+      "is_public": false
+    }
+  },
+  {
+    "model": "app_habits.habit",
+    "pk": 30,
+    "fields": {
+      "owner": 3,
+      "task": "выпью кружку кофе",
+      "start_time": null,
+      "location": "где придется",
+      "is_nice": true,
+      "related_habit": null,
+      "periodicity": "1",
+      "reward": null,
+      "time_to_complete": 120,
+      "is_public": true
+    }
+  },
+  {
+    "model": "app_habits.habit",
+    "pk": 31,
+    "fields": {
+      "owner": 3,
+      "task": "проверять холодильник",
+      "start_time": "00:25:00",
+      "location": "на кухне",
+      "is_nice": false,
+      "related_habit": 30,
+      "periodicity": "1",
+      "reward": null,
+      "time_to_complete": 10,
+      "is_public": false
+    }
+  }
+]
