@@ -114,3 +114,4 @@ docker-compose exec app python3 manage.py ccsu --tg 123456789
 docker-compose exec app python3 manage.py ccusers --tg 123456789
 ```
 При создании пользователей в консоль выведутся email, пароли, привилегии и Telegram ID# AtomicHabits_docker
+# AtomicHabits_docker
